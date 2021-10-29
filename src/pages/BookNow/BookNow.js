@@ -2,8 +2,16 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router';
+import { useForm } from "react-hook-form";
+import useAuth from '../../hooks/useAuth';
 
 const BookNow = () => {
+
+    const { register, handleSubmit } = useForm();
+    const onSubmit = data => {
+        console.log(data)
+    };
+    const {user} = useAuth();
 
     let {id} = useParams();
     const [bookingDetails, setBookingDetails] = useState()
@@ -20,11 +28,28 @@ const BookNow = () => {
 
     },[bookingDetails])
 
+    const nameValue = currentBookings?.name
+    const priceValue = currentBookings?.price
+
     return (
         <div className='container'>
-            <h2>{currentBookings?.name}</h2>
-            <div><img src={currentBookings?.img} alt="" /> </div>
-            <p>{currentBookings?.description}</p>
+            <div>
+                <h2>{currentBookings?.name}</h2>
+                <div><img src={currentBookings?.img} alt="" /> </div>
+                <p>{currentBookings?.description}</p>
+            </div>
+            <div>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <input value={user.displayName} {...register("name")} />
+                <input value={user.email} {...register("email")} />
+                <input placeholder="Billing Address" type='text' {...register("address")} />
+                <input placeholder="Enter Phone number" type="number" {...register("phonenumber")} />
+                <input placeholder='Tour Start from' type="date" {...register("startDate")} />
+                <input defaultValue={nameValue} type='text' {...register("package")} />
+                <input defaultValue={priceValue} type="number" {...register("price")} />
+                <input placeholder="" type="submit" />
+            </form>
+            </div>
             
 
         </div>
