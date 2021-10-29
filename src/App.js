@@ -9,7 +9,6 @@ import AuthProvider from './context/AuthProvider';
 import BookNow from './pages/BookNow/BookNow';
 import PriavateRoute from './pages/PriavateRoute/PriavateRoute';
 
-
 function App() {
   return (
     <div>
