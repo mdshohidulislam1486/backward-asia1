@@ -1,7 +1,8 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import Package from '../Home/Package/Package';
+import Package from '../Package/Package';
+
 
 const Packages = () => {
      const [packages, setPackages] = useState([])

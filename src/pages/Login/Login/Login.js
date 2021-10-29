@@ -1,11 +1,26 @@
 import React from 'react';
-import { Button, Nav} from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Button} from 'react-bootstrap';
+import { NavLink, useLocation, useHistory} from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 
 const Login = () => {
-    const {signInUsingGoogle, user} = useAuth();
+    const {signInUsingGoogle, user, setIsLoading } = useAuth();
+    const location = useLocation()
+    const redirect_url = location.state?.from || "/home"
+
+    const history = useHistory()
+
+    const handleGoogleLogin =()=>{
+        setIsLoading(true)
+        signInUsingGoogle()
+        .then(result =>{
+        history.push(redirect_url)
+        })
+        .finally(()=>setIsLoading(false))
+       
+    }
+
 
     return (
         <>
@@ -21,7 +36,7 @@ const Login = () => {
             <div className='text-center'>
                 <h2>This is login page</h2>
                 <div>
-                <Button onClick={signInUsingGoogle}>
+                <Button onClick={handleGoogleLogin}>
                 Google Sign In
                 </Button>
                 
