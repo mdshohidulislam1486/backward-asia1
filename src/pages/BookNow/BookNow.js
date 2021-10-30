@@ -8,10 +8,16 @@ import axios from 'axios';
 
 const BookNow = () => {
 
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         axios.post('http://localhost:5000/orders', data)
-        
+        .then(res => {
+            if(res.data.insertedId){
+                alert('Your booking is confirmed')
+                reset()
+            }
+        console.log(res)
+        })
         
     };
     const {user} = useAuth();
