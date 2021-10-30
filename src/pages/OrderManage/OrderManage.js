@@ -8,7 +8,7 @@ const OrderManage = ({orders}) => {
 
     return (
         
-            <div className='m-3 custom-shadow text-center rounded-5 p-3'>
+            <div className='m-3 custom-shadow text-center rounded p-3'>
                 <h3>{orders?.package}</h3>
                 <p>$ {orders?.price} us</p>
                 <h6>Booking id: {orders?._id}</h6>
