@@ -9,6 +9,7 @@ import AuthProvider from './context/AuthProvider';
 import BookNow from './pages/BookNow/BookNow';
 import PriavateRoute from './pages/PriavateRoute/PriavateRoute';
 import Booked from './pages/Booked/Booked';
+import OrderManage from './pages/OrdersManage/OrderManage';
 
 function App() {
   return (
@@ -28,6 +29,11 @@ function App() {
             </Route>
             <Route path='/booked'>
               <Booked></Booked>
+            </Route>
+            <Route path='/ordermanage'>
+              <OrderManage>
+
+              </OrderManage>
             </Route>
             <PriavateRoute exact path='/booking/:id'>
                <BookNow>

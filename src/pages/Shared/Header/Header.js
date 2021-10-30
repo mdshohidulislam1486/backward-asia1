@@ -19,6 +19,7 @@ const Header = () => {
                     <NavLink to="/home">Home</NavLink>
                     <NavLink to="/booked">Booking</NavLink>
                     <NavLink to='/login'>Login</NavLink>
+                    {user?.email && <NavLink to='/ordermanage'>Manage Order</NavLink>}
                     {user?.email &&<div> <h6>{user.displayName}</h6> <Button onClick={logOut}>Logout</Button></div>
                     }
                     </Nav>
