@@ -9,7 +9,7 @@ import AuthProvider from './context/AuthProvider';
 import BookNow from './pages/BookNow/BookNow';
 import PriavateRoute from './pages/PriavateRoute/PriavateRoute';
 import Booked from './pages/Booked/Booked';
-import OrderManage from './pages/OrdersManage/OrderManage';
+import OrderManage from './pages/OrdersManage/OrdersManage';
 
 function App() {
   return (

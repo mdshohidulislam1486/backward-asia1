@@ -1,0 +1,10 @@
+.custom-shadow{
+    box-shadow: 2px 2px 5px 2px gainsboro ;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.custom-shadow:hover{
+    box-shadow: 2px 2px 3px 2px gray;
+    transform:scale(1.1) ;
+}
