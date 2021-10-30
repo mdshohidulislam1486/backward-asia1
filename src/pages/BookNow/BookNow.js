@@ -4,12 +4,15 @@ import { useState } from 'react';
 import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import useAuth from '../../hooks/useAuth';
+import axios from 'axios';
 
 const BookNow = () => {
 
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        console.log(data)
+        axios.post('http://localhost:5000/orders', data)
+        
+        
     };
     const {user} = useAuth();
 
@@ -42,10 +45,10 @@ const BookNow = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input value={user.displayName} {...register("name")} />
                 <input value={user.email} {...register("email")} />
-                <input placeholder="Billing Address" type='text' {...register("address")} />
-                <input placeholder="Enter Phone number" type="number" {...register("phonenumber")} />
-                <input placeholder='Tour Start from' type="date" {...register("startDate")} />
-                <input defaultValue={nameValue} type='text' {...register("package")} />
+                <input placeholder="Billing Address" type='text' {...register("address")} required />
+                <input placeholder="Enter Phone number" type="number" {...register("phonenumber")} required />
+                <input placeholder='Tour Start from' type="date" {...register("startDate")} required />
+                <input defaultValue={nameValue} type='text' {...register("package")}  required/>
                 <input defaultValue={priceValue} type="number" {...register("price")} />
                 <input placeholder="" type="submit" />
             </form>
