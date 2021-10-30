@@ -5,6 +5,17 @@ import './OrderManage.css'
 
 
 const OrderManage = ({orders}) => {
+    const handleDelete =id=>{
+        const url =`http://localhost:5000/orders/${id}`
+        fetch(url, {
+            method:"DELETE"
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            const remaining = orders.filter(order => order._id !== id)
+        })
+    }
 
     return (
         
@@ -14,7 +25,7 @@ const OrderManage = ({orders}) => {
                 <h6>Booking id: {orders?._id}</h6>
                 <p>Ordered by: {orders?.name}</p>
                 <p>Start date: {orders?.startDate}</p>
-                <div className='text-center'><Button>Delete Order</Button></div>
+                <div className='text-center'><Button onClick={()=>handleDelete(orders?._id)}>Delete Order</Button></div>
 
             </div>
     
