@@ -9,7 +9,7 @@ import AuthProvider from './context/AuthProvider';
 import BookNow from './pages/BookNow/BookNow';
 import PriavateRoute from './pages/PriavateRoute/PriavateRoute';
 import Booked from './pages/Booked/Booked';
-import OrderManage from './pages/OrdersManage/OrdersManage';
+import OrdersManage from './pages/OrdersManage/OrdersManage';
 
 function App() {
   return (
@@ -31,9 +31,9 @@ function App() {
               <Booked></Booked>
             </Route>
             <Route path='/ordermanage'>
-              <OrderManage>
+              <OrdersManage>
 
-              </OrderManage>
+              </OrdersManage>
             </Route>
             <PriavateRoute exact path='/booking/:id'>
                <BookNow>
