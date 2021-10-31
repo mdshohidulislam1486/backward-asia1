@@ -8,15 +8,15 @@ const OrderManage = (props) => {
 
  const {handleDelete, orders} = props
    
-    return (
+    return ( 
 
-    <div className='m-3 custom-shadow text-center rounded p-3'>
-            <h3>{orders?.package}</h3>
-            <p>$ {orders?.price} us</p>
-            <h6>Booking id: {orders?._id}</h6>
-            <p>Ordered by: {orders?.name}</p>
-            <p>Start date: {orders?.startDate}</p>
-            <div className='text-center'><Button onClick={()=>handleDelete(orders?._id)}>Delete Order</Button></div>
+    <div className='m-3 custom-shadow text-center rounded p-3 '>
+            <h3 className='text-light'>{orders?.package}</h3>
+            <p className='text-light'>$ {orders?.price} us</p>
+            <h6 className='text-light'>Booking id: {orders?._id}</h6>
+            <p className='text-light'>Ordered by: {orders?.name}</p>
+            <p className='text-light'>Start date: {orders?.startDate}</p>
+            <div className='text-center text-light '><Button variant='success' onClick={()=>handleDelete(orders?._id)}>Delete Order</Button></div>
 
      </div>
 

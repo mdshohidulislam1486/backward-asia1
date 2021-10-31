@@ -13,6 +13,9 @@ const whyUsdata = [
 const WhyUs = () => {
     return (
         <div className='container my-5 '>
+            <div>
+                <h2 className='text-center bg-success p-3 text-light '>Why Choose Backward Asia? </h2>
+            </div>
             <div className='d-flex flex-wrap justify-content-center text-center '>
             {
                 whyUsdata.map(whyData =><WhyUsSingle

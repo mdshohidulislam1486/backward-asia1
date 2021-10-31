@@ -23,7 +23,7 @@ const Login = () => {
 
 
     return (
-        <>
+        <div className='custom-height d-flex align-items-center justify-content-center'>
             {user?.email ? 
             <div className='text-center'>
             <NavLink to="/home">
@@ -44,7 +44,7 @@ const Login = () => {
             </div>
 
             }
-        </>
+        </div>
     );
 };
 

@@ -10,6 +10,7 @@ import BookNow from './pages/BookNow/BookNow';
 import PriavateRoute from './pages/PriavateRoute/PriavateRoute';
 import Booked from './pages/Booked/Booked';
 import OrdersManage from './pages/OrdersManage/OrdersManage';
+import Footer from './pages/Home/Footer/Footer';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
               <NotFound></NotFound>
             </Route>
           </Switch>
+          <Footer></Footer>
         </Router>
       </AuthProvider>
     </div>

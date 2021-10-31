@@ -1,16 +1,8 @@
 import useProducts from '../../hooks/orderManage';
 import OrderManage from '../OrderManage/OrderManage';
+import './OrdersManage.css'
 
 const OrdersManage = () => {
-
-  /*   
-    const [ordersManage, setOrderManages] = useState([]);
-
-    useEffect(()=>{
-        fetch('http://localhost:5000/orders')
-        .then(res => res.json())
-        .then(data => setOrderManages(data))
-    },[]) */
 
     const [ordersManage, setOrdersManage] = useProducts()
 
@@ -35,7 +27,7 @@ const OrdersManage = () => {
     }
 
     return (
-        <div className='container d-flex flex-wrap justify-content-center align-items-center'>
+        <div className='container d-flex flex-wrap justify-content-center align-items-center custom-order-css'>
             {
                 ordersManage?.map(orders=> <OrderManage
                 key={orders._id}
