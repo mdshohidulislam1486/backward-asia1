@@ -9,7 +9,7 @@ const OrdersManage = () => {
     const handleDelete =id=>{
         const result = window.confirm('Do you want to cancel the booking?')
         if(result){
-            const url =`http://localhost:5000/orders/${id}`
+            const url =`https://ghostly-crypt-13169.herokuapp.com//orders/${id}`
             fetch(url, {
                 method:"DELETE"
             })

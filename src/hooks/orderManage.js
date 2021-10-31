@@ -5,7 +5,7 @@ import { useState } from "react"
 const useProducts = () => {
     const [orderManage, setOrderManages] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://ghostly-crypt-13169.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrderManages(data));
     }, []);
