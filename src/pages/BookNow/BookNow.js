@@ -10,7 +10,7 @@ const BookNow = () => {
 
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        axios.post('http://localhost:5000/orders', data)
+        axios.post('https://ghostly-crypt-13169.herokuapp.com/orders', data)
         .then(res => {
             if(res.data.insertedId){
                 alert('Your booking is confirmed')
@@ -26,7 +26,7 @@ const BookNow = () => {
     const [bookingDetails, setBookingDetails] = useState()
     const [currentBookings, setCurrentBooking] = useState({})
     useEffect(()=>{
-        fetch('http://localhost:5000/packages')
+        fetch('https://ghostly-crypt-13169.herokuapp.com:5000/packages')
         .then(res => res.json())
         .then(data => setBookingDetails(data))
     },[]);
