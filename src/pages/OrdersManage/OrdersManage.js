@@ -3,7 +3,7 @@ import OrderManage from '../OrderManage/OrderManage';
 import './OrdersManage.css'
 
 const OrdersManage = () => {
-
+ 
     const [ordersManage, setOrdersManage] = useProducts()
 
     const handleDelete =id=>{
