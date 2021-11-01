@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../hooks/useAuth';
+import MyOrder from '../MyOrder/MyOrder';
 import './Booked.css'
-
+ 
 const Booked = () => {
 const {user}= useAuth()
 const [myBookings, setMyBookings] =useState([])
@@ -16,10 +17,6 @@ useEffect(()=>{
 
 const myEmail = user.email
 
-const filterMyOrder = ()=>{
-
-}
-
 useEffect(()=>{
     const updateBooking = myBookings.filter(myBooking => myBooking.email === myEmail )
     setMYBooking(updateBooking)
@@ -30,6 +27,13 @@ useEffect(()=>{
     return (
         <div className='custom-height'>
             <h2>{myBooking.length}</h2>
+
+            {
+                myBooking.map(onyOrder =><MyOrder
+                key={onyOrder._id}
+                onyOrder={onyOrder}
+                ></MyOrder> )
+            }
         </div>
     );
 };
