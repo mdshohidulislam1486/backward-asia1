@@ -26,7 +26,7 @@ const BookNow = () => {
     const [bookingDetails, setBookingDetails] = useState()
     const [currentBookings, setCurrentBooking] = useState({})
     useEffect(()=>{
-        fetch('https://ghostly-crypt-13169.herokuapp.com:5000/packages')
+        fetch('https://ghostly-crypt-13169.herokuapp.com/packages')
         .then(res => res.json())
         .then(data => setBookingDetails(data))
     },[]);

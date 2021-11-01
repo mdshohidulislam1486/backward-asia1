@@ -14,8 +14,8 @@ const Footer = () => {
                 </div>
                 <div>
                     <p>Find us </p>
-                    <p>Facebook <i class="fab fa-facebook"></i></p>
-                    <p>Instagram  <i class="fab fa-instagram-square"></i></p>
+                    <p>Facebook <i className="fab fa-facebook"></i></p>
+                    <p>Instagram  <i className="fab fa-instagram-square"></i></p>
                 </div>
                 
             </div>
