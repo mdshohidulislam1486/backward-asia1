@@ -37,8 +37,6 @@ const BookNow = () => {
 
     },[bookingDetails])
 
-    const nameValue = currentBookings?.name
-    const priceValue = currentBookings?.price
 
     return (
         <div className='container'>
@@ -47,16 +45,15 @@ const BookNow = () => {
                 <div><img src={currentBookings?.img} alt="" /> </div>
                 <p>{currentBookings?.description}</p>
             </div>
-            <div>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <div className='d-flex justify-content-center justify-content-md-start'>
+            <form className='d-flex flex-column w-50 mb-2 row gy-3 ' onSubmit={handleSubmit(onSubmit)}>
                 <input value={user.displayName} {...register("name")} />
                 <input value={user.email} {...register("email")} />
                 <input placeholder="Billing Address" type='text' {...register("address")} required />
                 <input placeholder="Enter Phone number" type="number" {...register("phonenumber")} required />
                 <input placeholder='Tour Start from' type="date" {...register("startDate")} required />
-                <input defaultValue={nameValue} type='text' {...register("package")}  required/>
-                <input defaultValue={priceValue} type="number" {...register("price")} />
-                <input placeholder="" type="submit" />
+                <input placeholder='Copy the package name' type='text' {...register("package")}  required/>
+                <div><input placeholder="" type="submit" /></div>
             </form>
             </div>
             

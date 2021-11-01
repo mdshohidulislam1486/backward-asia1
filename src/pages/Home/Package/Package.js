@@ -20,7 +20,7 @@ const Package = ({singlePackage}) => {
                         <p className="card-text">{description.slice(0, 200)}<NavLink className='text-decoration-none' to="/serviceDetails"> -see more</NavLink></p>
                     </div>
                     <footer className='d-flex justify-content-around align-items-center mb-2'>
-                        <NavLink to={`/booking/${singlePackage.key}`}><Button>Book Now</Button></NavLink>
+                        <NavLink to={`/booking/${singlePackage.key}`}><Button variant='success'>Book Now</Button></NavLink>
                         <div className="text-warning cursor-custom">
                             <FontAwesomeIcon className='me-2' icon={faShoppingCart}/>
                             <FontAwesomeIcon className='me-2' icon={faShareAlt}/>
