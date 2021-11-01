@@ -26,7 +26,6 @@ useEffect(()=>{
 
 },[myBookings])
 
-let {id} = useParams();
 
 const handleDelete =(id)=>{
   
